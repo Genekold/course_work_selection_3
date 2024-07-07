@@ -13,7 +13,7 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
-def get_data_from_file(file_path: str) -> pd.DataFrame:
+def get_data_from_file(file_path: str) -> list[dict]:
     """
     Функция чтения XLSX файла с операциями:
     :param file_path: Путь до файла с данными
@@ -24,21 +24,19 @@ def get_data_from_file(file_path: str) -> pd.DataFrame:
 
     if not os.path.exists(abs_file_path):
         logger.error(f"Файла с таким именем {abs_file_path} не существует в этой дииректории")
-        return []
+        return f"Файл {file_path} не найден"
 
     try:
         if file_path.endswith(".xls"):
             logger.debug(f"{file_path} это XLS-файл")
             df_data = pd.read_excel(abs_file_path)
             logger.info(f"Файл {file_path} прочитан")
-            return df_data
+            data = df_data.to_dict(orient="records")
+            return data
         else:
             logger.debug(f"{file_path} это не XLSX-файл")
-            return None
+            return []
 
     except Exception as e:
         logger.error(f"Ошибка {e} при чтении {file_path} файла")
-
-
-if __name__ == '__main__':
-    print(get_data_from_file("operations.xls"))
+        return []

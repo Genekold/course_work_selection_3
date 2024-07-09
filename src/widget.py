@@ -20,3 +20,7 @@ def get_hello_message_from_time() -> str:
         return f"Добрый вечер! Сегодня {week[weekday]}."
     else:
         return f"Доброй ночи! Сегодня {week[weekday]}."
+
+
+if __name__ == '__main__':
+    print(get_hello_message_from_time())

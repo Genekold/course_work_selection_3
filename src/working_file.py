@@ -32,7 +32,7 @@ def get_data_from_file(file_path: str) -> list[dict]:
             df_data = pd.read_excel(abs_file_path)
             logger.info(f"Файл {file_path} прочитан")
             data = df_data.to_dict(orient="records")
-            return data
+            return df_data
         else:
             logger.debug(f"{file_path} это не XLSX-файл")
             return []
@@ -40,3 +40,7 @@ def get_data_from_file(file_path: str) -> list[dict]:
     except Exception as e:
         logger.error(f"Ошибка {e} при чтении {file_path} файла")
         return []
+
+
+if __name__ == '__main__':
+    print(get_data_from_file("operations.xls"))

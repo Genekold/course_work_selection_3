@@ -13,7 +13,7 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
-def get_data_from_file(file_path: str) -> list[dict]:
+def get_data_from_file(file_path: str) -> pd.DataFrame:
     """
     Функция чтения XLSX файла с операциями:
     :param file_path: Путь до файла с данными
@@ -31,7 +31,7 @@ def get_data_from_file(file_path: str) -> list[dict]:
             logger.debug(f"{file_path} это XLS-файл")
             df_data = pd.read_excel(abs_file_path)
             logger.info(f"Файл {file_path} прочитан")
-            data = df_data.to_dict(orient="records")
+
             return df_data
         else:
             logger.debug(f"{file_path} это не XLSX-файл")

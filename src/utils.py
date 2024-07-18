@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 from config import LOGS_DIR
-from src.working_file import get_data_from_file
+from src.exetrnal_api import get_course_currency
 
 logger = logging.getLogger("utils")
 logger.setLevel(logging.DEBUG)
@@ -62,6 +62,20 @@ def get_top_transactions(transaction: pd.DataFrame) -> list[dict]:
     return result
 
 
+def get_exchange_rates(list_currency: list) -> dict:
+    """
+    Функция возвращает словарь курсов валют согласно списку запрашиваемых валют
+    :param list_currency: список валют для получения курса
+    :return: Словарь валюта - курс.
+    """
+    result = {}
+    for currency in list_currency:
+        course = get_course_currency(currency=currency)
+        result[currency] = course
+    logger.info(f"Словарь кусов валют {result}")
+    return result
+
+
 if __name__ == '__main__':
-    list_operation = get_data_from_file("operations.xls")
-    print(get_grouped_list_card(list_operation))
+    list_ = ["USD", "CNY"]
+    print(get_exchange_rates(list_))

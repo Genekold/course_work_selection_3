@@ -8,6 +8,7 @@ def get_hello_message_from_time() -> str:
     """
     date = datetime.datetime.today()
     time = datetime.datetime.today().time().strftime("%H %M %S").split(" ")
+    print(time)
 
     weekday = datetime.datetime.weekday(date)
     week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]

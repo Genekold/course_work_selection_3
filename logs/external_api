@@ -1,0 +1,4 @@
+2024-07-18 09:04:28,748 - external_api - DEBUG - Данные запроса {'apikey': '8WgJPCtlF1Fhl01xN2c2XWCamGqlgBsg'} - {'amount': 1, 'from': 'USD', 'to': 'RUB'}
+2024-07-18 09:04:29,373 - external_api - INFO - Ответ {'success': True, 'query': {'from': 'USD', 'to': 'RUB', 'amount': 1}, 'info': {'timestamp': 1721282644, 'rate': 88.500453}, 'date': '2024-07-18', 'result': 88.500453}
+2024-07-18 09:04:29,376 - external_api - DEBUG - Данные запроса {'apikey': '8WgJPCtlF1Fhl01xN2c2XWCamGqlgBsg'} - {'amount': 1, 'from': 'CNY', 'to': 'RUB'}
+2024-07-18 09:04:29,817 - external_api - INFO - Ответ {'success': True, 'query': {'from': 'CNY', 'to': 'RUB', 'amount': 1}, 'info': {'timestamp': 1721282644, 'rate': 12.198201}, 'date': '2024-07-18', 'result': 12.198201}

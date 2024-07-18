@@ -1,9 +1,9 @@
 import logging
 import os
 
-from config import DATA_DIR, LOGS_DIR
-
 import pandas as pd
+
+from config import DATA_DIR, LOGS_DIR
 
 logger = logging.getLogger("working_file")
 logger.setLevel(logging.DEBUG)

@@ -1,10 +1,5 @@
-import json
-import os
-
 import pandas as pd
 import pytest
-
-from config import ROOT_DIR, DATA_DIR
 
 
 @pytest.fixture

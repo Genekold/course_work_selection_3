@@ -5,7 +5,7 @@ from src.working_file import get_data_from_file
 from unittest.mock import patch, mock_open
 
 abs_path = os.path.join(DATA_DIR, "operations.xls")
-tests_path = os.path.join(TESTS_DIR, "test.xl")
+tests_path = os.path.join(DATA_DIR, "test.xl")
 
 
 @patch('pandas.read_excel')
@@ -32,7 +32,7 @@ def test_get_data_from_not_file(mock_read_xls):
         'Дата платежа': '31.12.2021',
         'Статус': 1,
     }]
-    assert get_data_from_file("test.xls") == "Файл test.xls не найден"
+    assert get_data_from_file("test.xlsx") == "Файл test.xlsx не найден"
 
 
 

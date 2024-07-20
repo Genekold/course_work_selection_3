@@ -1,4 +1,10 @@
-2024-07-18 09:04:28,748 - external_api - DEBUG - Данные запроса {'apikey': '8WgJPCtlF1Fhl01xN2c2XWCamGqlgBsg'} - {'amount': 1, 'from': 'USD', 'to': 'RUB'}
-2024-07-18 09:04:29,373 - external_api - INFO - Ответ {'success': True, 'query': {'from': 'USD', 'to': 'RUB', 'amount': 1}, 'info': {'timestamp': 1721282644, 'rate': 88.500453}, 'date': '2024-07-18', 'result': 88.500453}
-2024-07-18 09:04:29,376 - external_api - DEBUG - Данные запроса {'apikey': '8WgJPCtlF1Fhl01xN2c2XWCamGqlgBsg'} - {'amount': 1, 'from': 'CNY', 'to': 'RUB'}
-2024-07-18 09:04:29,817 - external_api - INFO - Ответ {'success': True, 'query': {'from': 'CNY', 'to': 'RUB', 'amount': 1}, 'info': {'timestamp': 1721282644, 'rate': 12.198201}, 'date': '2024-07-18', 'result': 12.198201}
+2024-07-20 12:49:18,519 - external_api - DEBUG - Данные запроса {'apikey': '8WgJPCtlF1Fhl01xN2c2XWCamGqlgBsg'} - {'amount': 1, 'from': 'USD', 'to': 'RUB'}
+2024-07-20 12:49:18,519 - external_api - INFO - Ответ {'result': 100}
+2024-07-20 12:49:18,527 - external_api - DEBUG - Данные запроса {'apikey': '8WgJPCtlF1Fhl01xN2c2XWCamGqlgBsg'} - {'amount': 1, 'from': 'U', 'to': 'RUB'}
+2024-07-20 12:49:18,527 - external_api - DEBUG - Неуспешный запрос 201
+2024-07-20 12:49:18,527 - external_api - DEBUG - Параметры запроса AMZN, cqdm2shr01qgb1vud8g0cqdm2shr01qgb1vud8gg
+2024-07-20 12:49:18,527 - external_api - INFO - Результат запроса {'c': 183.13}
+2024-07-20 12:49:18,527 - external_api - DEBUG - Параметры запроса GOOGL, cqdm2shr01qgb1vud8g0cqdm2shr01qgb1vud8gg
+2024-07-20 12:49:18,527 - external_api - INFO - Результат запроса {'c': 183.13}
+2024-07-20 12:49:18,536 - external_api - DEBUG - Параметры запроса AMZN, cqdm2shr01qgb1vud8g0cqdm2shr01qgb1vud8gg
+2024-07-20 12:49:18,536 - external_api - DEBUG - Неуспешный запрос 201

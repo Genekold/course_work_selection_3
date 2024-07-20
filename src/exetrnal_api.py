@@ -14,7 +14,7 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
-def get_course_currency(amount: float = 1, currency: str = "USD", to_currency: str = "RUB") -> float:
+def get_course_currency(amount: float = 1, currency: str = "USD", to_currency: str = "RUB") -> dict:
     """
     Функция, котрая возрващает курс валюты по отношению к рублю
     :param amount: сумма по умолчанию 1 (
@@ -23,20 +23,46 @@ def get_course_currency(amount: float = 1, currency: str = "USD", to_currency: s
     :return: курс валюты
     """
     load_dotenv()
-    url = "https://api.apilayer.com/exchangerates_data/convert"
-    header = {"apikey": os.getenv("API_KEY_CURENCY")}
-    params = {"amount": amount, "from": currency, "to": to_currency}
-    logger.debug(f"Данные запроса {header} - {params}")
-    response = requests.get(url, headers=header, params=params)
-    if response.status_code != 200:
-        logger.debug(f"Неуспешный запрос {response.status_code}")
-        return "Неуспешный запрос"
-    data = response.json()
-    logger.info(f"Ответ {data}")
-    exchange_rates = round(data["result"], 4)
+    result = {}
+    for currenc in currency:
+        url = "https://api.apilayer.com/exchangerates_data/convert"
+        header = {"apikey": os.getenv("APILAYER_API_KEY")}
+        params = {"amount": amount, "from": currenc, "to": to_currency}
+        logger.debug(f"Данные запроса {header} - {params}")
+        response = requests.get(url, headers=header, params=params)
+        if response.status_code != 200:
+            logger.debug(f"Неуспешный запрос {response.status_code}")
+            return "Неуспешный запрос"
+        data = response.json()
+        logger.info(f"Ответ {data}")
+        result[currenc] = round(data["result"], 4)
 
-    return exchange_rates
+    return result
+
+
+def get_stock_price(stock_list: list[str]) -> dict:
+    """
+    Функция, которая возвращает цены на указанные акции
+    :param stock_list: лист с названиями акций
+    :return: словарь акция - цена
+    """
+    load_dotenv()
+    result = {}
+    url = "https://api.finnhub.io/api/v1/quote"
+    for stock in stock_list:
+        params = {"symbol": stock, "token": os.getenv("FINNHUB_API_KEY")}
+        logger.debug(f"Параметры запроса {stock}, {os.getenv('FINNHUB_API_KEY')}")
+        response = requests.get(url, params=params)
+        if response.status_code != 200:
+            logger.debug(f"Неуспешный запрос {response.status_code}")
+            return "Неуспешный запрос"
+        data = response.json()
+        logger.info(f"Результат запроса {data}")
+        result[stock] = data["c"]
+
+    return result
 
 
 if __name__ == '__main__':
-    print(get_course_currency(currency="EUR"))
+    list_ = ["AMZN", "GOOGL"]
+    print(get_stock_price(list_))

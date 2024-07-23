@@ -1,14 +1,17 @@
 import datetime
 
 
-def get_hello_message_from_time() -> str:
+def get_hello_message_from_time(date_str: str = datetime.datetime.today()) -> str:
     """
     Функция для получения приветственного сообщения в зависимости от времени суток
     :return:
     """
-    date = datetime.datetime.today()
-    time = datetime.datetime.today().time().strftime("%H %M %S").split(" ")
-    print(time)
+    if isinstance(date_str, str):
+        date = datetime.datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+    else:
+        date = date_str
+
+    time = date.strftime("%H %M %S").split(" ")
 
     weekday = datetime.datetime.weekday(date)
     week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
@@ -24,4 +27,5 @@ def get_hello_message_from_time() -> str:
 
 
 if __name__ == '__main__':
+    # print(get_hello_message_from_time("2024-04-12 12:22:22"))
     print(get_hello_message_from_time())

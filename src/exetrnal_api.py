@@ -14,11 +14,11 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
-def get_course_currency(amount: float = 1, currency: str = "USD", to_currency: str = "RUB") -> dict:
+def get_course_currency( currency: list, amount: float = 1, to_currency: str = "RUB") -> dict|str:
     """
     Функция, котрая возрващает курс валюты по отношению к рублю
-    :param amount: сумма по умолчанию 1 (
-    :param currency: валюта для получения курса по умолчанию USD
+    :param amount: сумма по умолчанию 1
+    :param currency: Опционально, валюта для получения курса по умолчанию currency = ["USD", "EUR"]
     :param to_currency: валюта по отншению к которой показан курс
     :return: курс валюты
     """
@@ -40,10 +40,10 @@ def get_course_currency(amount: float = 1, currency: str = "USD", to_currency: s
     return result
 
 
-def get_stock_price(stock_list: list[str]) -> dict:
+def get_stock_price(stock_list: list[str]) -> dict|str:
     """
     Функция, которая возвращает цены на указанные акции
-    :param stock_list: лист с названиями акций
+    :param stock_list: лист с названиями акций.
     :return: словарь акция - цена
     """
     load_dotenv()

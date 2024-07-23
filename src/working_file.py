@@ -42,5 +42,5 @@ def get_data_from_file(file_path: str) -> pd.DataFrame:
         return []
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(get_data_from_file("operations.xls"))

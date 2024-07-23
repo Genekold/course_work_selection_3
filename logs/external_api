@@ -1,8 +1,0 @@
-2024-07-23 09:44:28,364 - external_api - DEBUG - Данные запроса {'apikey': '8WgJPCtlF1Fhl01xN2c2XWCamGqlgBsg'} - {'amount': 1, 'from': 'CNY', 'to': 'RUB'}
-2024-07-23 09:44:28,982 - external_api - INFO - Ответ {'success': True, 'query': {'from': 'CNY', 'to': 'RUB', 'amount': 1}, 'info': {'timestamp': 1721717055, 'rate': 12.062521}, 'date': '2024-07-23', 'result': 12.062521}
-2024-07-23 09:44:28,983 - external_api - DEBUG - Данные запроса {'apikey': '8WgJPCtlF1Fhl01xN2c2XWCamGqlgBsg'} - {'amount': 1, 'from': 'USD', 'to': 'RUB'}
-2024-07-23 09:44:29,472 - external_api - INFO - Ответ {'success': True, 'query': {'from': 'USD', 'to': 'RUB', 'amount': 1}, 'info': {'timestamp': 1721717055, 'rate': 87.748806}, 'date': '2024-07-23', 'result': 87.748806}
-2024-07-23 09:44:29,474 - external_api - DEBUG - Параметры запроса TSLA, cqdm2shr01qgb1vud8g0cqdm2shr01qgb1vud8gg
-2024-07-23 09:44:29,890 - external_api - INFO - Результат запроса {'c': 251.51, 'd': 12.31, 'dp': 5.1463, 'h': 253.2099, 'l': 243.75, 'o': 244.2125, 'pc': 239.2, 't': 1721678401}
-2024-07-23 09:44:29,890 - external_api - DEBUG - Параметры запроса GOOGL, cqdm2shr01qgb1vud8g0cqdm2shr01qgb1vud8gg
-2024-07-23 09:44:30,321 - external_api - INFO - Результат запроса {'c': 181.67, 'd': 4.01, 'dp': 2.2571, 'h': 182.7, 'l': 180.23, 'o': 180.63, 'pc': 177.66, 't': 1721678401}

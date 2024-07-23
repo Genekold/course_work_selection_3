@@ -8,13 +8,13 @@ from config import LOGS_DIR
 
 logger = logging.getLogger("external_api")
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler(os.path.join(LOGS_DIR, "external_api"), encoding="utf8", mode="w")
+file_handler = logging.FileHandler(os.path.join(LOGS_DIR, "external_api.log"), encoding="utf8", mode="w")
 file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
-def get_course_currency( currency: list, amount: float = 1, to_currency: str = "RUB") -> dict|str:
+def get_course_currency(currency: list, amount: float = 1, to_currency: str = "RUB") -> dict | str:
     """
     Функция, котрая возрващает курс валюты по отношению к рублю
     :param amount: сумма по умолчанию 1
@@ -40,7 +40,7 @@ def get_course_currency( currency: list, amount: float = 1, to_currency: str = "
     return result
 
 
-def get_stock_price(stock_list: list[str]) -> dict|str:
+def get_stock_price(stock_list: list[str]) -> dict | str:
     """
     Функция, которая возвращает цены на указанные акции
     :param stock_list: лист с названиями акций.
@@ -63,6 +63,6 @@ def get_stock_price(stock_list: list[str]) -> dict|str:
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     list_ = ["AMZN", "GOOGL"]
     print(get_stock_price(list_))

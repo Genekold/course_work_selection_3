@@ -4,7 +4,7 @@ import datetime
 def get_hello_message_from_time(date_str: str) -> str:
     """
     Функция для получения приветственного сообщения в зависимости от времени суток
-    :return:
+    :return: Строка приветситвия.
     """
     if isinstance(date_str, str):
         date = datetime.datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
@@ -28,4 +28,3 @@ def get_hello_message_from_time(date_str: str) -> str:
 
 if __name__ == "__main__":
     print(get_hello_message_from_time("2024-04-12 12:22:22"))
-

@@ -1,5 +1,3 @@
-from typing import List, Dict, Any
-
 import pandas as pd
 
 from src.utils import get_list_of_monthly_expenses
@@ -24,7 +22,7 @@ def investment_bank(month: str, transactions: pd.DataFrame, limit: int) -> float
     return round(result, 2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     path_file = "operations.xls"
     df_data = get_data_from_file(path_file)
     print(investment_bank("2019-11", df_data, 50))

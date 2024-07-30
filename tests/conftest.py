@@ -32,3 +32,8 @@ def top_tr_test():
             {'date': '24.11.2021', 'amount': -1000, 'category': 'Каршеринг', 'description': 'Ситидрайв'},
             {'date': '31.12.2021', 'amount': -600, 'category': 'Переводы', 'description': 'Константин Л.'},
             {'date': '31.12.2021', 'amount': -500, 'category': 'Различные товары', 'description': 'Ozon.ru'}]
+
+
+@pytest.fixture
+def list_of_monthly():
+    return [2000, 100]

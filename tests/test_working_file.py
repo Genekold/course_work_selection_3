@@ -35,8 +35,6 @@ def test_get_data_from_not_file(mock_read_xls):
     assert get_data_from_file("test.xlsx") == "Файл test.xlsx не найден"
 
 
-
-
 @patch('pandas.read_excel')
 def test_get_data_from_not_xlsx(mock_read_xls):
     mock_read_xls.return_value = [{

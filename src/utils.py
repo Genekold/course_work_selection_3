@@ -61,6 +61,26 @@ def get_top_transactions(transaction: pd.DataFrame) -> list[dict]:
     return result
 
 
+def get_list_of_monthly_expenses(month: str, transactions: pd.DataFrame) -> list:
+    """
+    Функция возвращает список трат за месяц
+    :param month: месяц, для которого выбирается список (строка в формате 'YYYY-MM')
+    :param transaction: transaction: pd.DataFrame с операциями по картам
+    :return: список трат за месяц содежит дату и сумму транзакции
+    """
+    format_date = f"{month[-2:]}.{month[:4]}"
+    spending = transactions[transactions["Сумма платежа"] < 0]
+    df = spending[["Дата операции", "Сумма платежа"]]
+    dict_spending = df.to_dict("index")
+    result = []
+    for operation in dict_spending.values():
+        if operation["Дата операции"][3:10] == format_date:
+            result.append(operation["Сумма платежа"] * -1)
+
+    return result
+
+
 if __name__ == "__main__":
-    list_ = get_data_from_file("operations.xls")
+    list_ = get_data_from_file("test.xls")
+
     print(get_top_transactions(list_))

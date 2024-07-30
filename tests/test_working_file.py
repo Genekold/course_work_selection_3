@@ -22,7 +22,7 @@ def test_get_data_from_file(mock_read_xls):
 @patch('pandas.read_excel')
 def test_get_data_from_file_error(mock_read_xls):
     mock_read_xls.side_effect = Exception
-    assert get_data_from_file(abs_path) == []
+    assert get_data_from_file(abs_path) == None
     mock_read_xls.assert_called()
 
 
@@ -43,4 +43,4 @@ def test_get_data_from_not_xlsx(mock_read_xls):
         'Дата платежа': '31.12.2021',
         'Статус': 1,
     }]
-    assert get_data_from_file(tests_path) == []
+    assert get_data_from_file(tests_path) == None

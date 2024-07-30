@@ -13,11 +13,11 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
-def get_data_from_file(file_path: str) -> pd.DataFrame:
+def get_data_from_file(file_path: str) -> pd.DataFrame | None:
     """
     Функция чтения XLSX файла с операциями:
     :param file_path: Путь до файла с данными
-    :return: Список словарей с операциями
+    :return: pd.DataFrame
     """
 
     abs_file_path = os.path.join(DATA_DIR, file_path)
@@ -35,12 +35,12 @@ def get_data_from_file(file_path: str) -> pd.DataFrame:
             return df_data
         else:
             logger.debug(f"{file_path} это не XLSX-файл")
-            return []
+            return None
 
     except Exception as e:
         logger.error(f"Ошибка {e} при чтении {file_path} файла")
-        return []
+        return None
 
 
 if __name__ == "__main__":
-    print(get_data_from_file("operations.xls"))
+    print(get_data_from_file("test.xls"))

@@ -27,8 +27,8 @@ def group_df_test():
 
 @pytest.fixture
 def top_tr_test():
-    return [{'date': '30.12.2021', 'amount': -2000, 'category': 'Ж/д билеты', 'description': 'РЖД'},
-            {'date': '30.12.2021', 'amount': -2000, 'category': 'Ж/д билеты', 'description': 'РЖД'},
-            {'date': '30.12.2021', 'amount': -1000, 'category': 'Каршеринг', 'description': 'Ситидрайв'},
+    return [{'date': '24.11.2021', 'amount': -2000, 'category': 'Ж/д билеты', 'description': 'РЖД'},
+            {'date': '22.10.2021', 'amount': -2000, 'category': 'Ж/д билеты', 'description': 'РЖД'},
+            {'date': '24.11.2021', 'amount': -1000, 'category': 'Каршеринг', 'description': 'Ситидрайв'},
             {'date': '31.12.2021', 'amount': -600, 'category': 'Переводы', 'description': 'Константин Л.'},
             {'date': '31.12.2021', 'amount': -500, 'category': 'Различные товары', 'description': 'Ozon.ru'}]

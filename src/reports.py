@@ -20,7 +20,7 @@ def spending_by_category(transactions: pd.DataFrame, category: str, date: str = 
     else:
         date = datetime.now()
         print(date)
-    start_date = date - timedelta(days=1100)
+    start_date = date - timedelta(days=90)
 
     filtred_df = transactions.loc[(pd.to_datetime(transactions["Дата платежа"], format="%d.%m.%Y").
                                    between(start_date, date))]
